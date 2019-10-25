@@ -32,10 +32,8 @@ public class InfoActivity extends AppCompatActivity {
     // ***
 
     public void createMapIntent(View view ){
-
         // Create a Uri from an intent string
         Uri uri = Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
-
         // Create an Intent from uri. Set the action to ACTION_VIEW
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, uri);
         // Make the Intent explicit by setting the Google Maps package
@@ -50,4 +48,13 @@ public class InfoActivity extends AppCompatActivity {
     // ***
     // TODO - Task 3 - Launch the Phone Activity
     // ***
+    public void createPhoneIntent(View view){
+        // Create a Uri from an intent string
+        Uri uri =Uri.parse("tel:0123456789");
+        // Make implicit Intent with action dial
+        Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+        //Set intent data
+        phoneIntent.setData(uri);
+        startActivity(phoneIntent);
+    }
 }
